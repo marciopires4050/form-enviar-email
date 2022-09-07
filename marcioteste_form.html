@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PHP Contact Form Style Demo</title>
+
+<style type="text/css">
+body{
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif; 
+	font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform{
+	margin:0 auto;
+	width:400px;
+	padding:14px;
+}
+	/* ----------- basic ----------- */
+	#basic{
+		border:solid 2px #DEDEDE;	
+	}
+	#basic h1 {
+		font-size:14px;
+		font-weight:bold;
+		margin-bottom:8px;
+	}
+	#basic p{
+		font-size:11px;
+		color:#666666;
+		margin-bottom:20px;
+		border-bottom:solid 1px #dedede;
+		padding-bottom:10px;
+	}
+	#basic label{
+		display:block;
+		font-weight:bold;
+		text-align:right;
+		width:140px;
+		float:left;
+	}
+	#basic .small{
+		color:#666666;
+		display:block;
+		font-size:11px;
+		font-weight:normal;
+		text-align:right;
+		width:140px;
+	}
+	#basic input{
+		float:left;
+		width:200px;
+		margin:2px 0 30px 10px;
+	}
+	#basic button{ 
+		clear:both;
+		margin-left:150px;
+		background:#888888;
+		color:#FFFFFF;
+		border:solid 1px #666666;
+		font-size:11px;
+		font-weight:bold;
+		padding:4px 6px;
+	}
+
+
+	/* ----------- stylized ----------- */
+	#stylized{
+		border:solid 2px #b7ddf2;
+		background:#ebf4fb;
+
+	}
+	#stylized h1 {
+		font-size:14px;
+		font-weight:bold;
+		margin-bottom:8px;
+	}
+	#stylized p{
+		font-size:11px;
+		color:#666666;
+		margin-bottom:20px;
+		border-bottom:solid 1px #b7ddf2;
+		padding-bottom:10px;
+	}
+	#stylized label{
+		display:block;
+		font-weight:bold;
+		text-align:right;
+		width:140px;
+		float:left;
+	}
+	#stylized .small{
+		color:#666666;
+		display:block;
+		font-size:11px;
+		font-weight:normal;
+		text-align:right;
+		width:140px;
+	}
+	#stylized input{
+		float:left;
+		font-size:12px;
+		padding:4px 2px;
+		border:solid 1px #aacfe4;
+		width:200px;
+		margin:2px 0 20px 10px;
+	}
+	#stylized button{ 
+		clear:both;
+		margin-left:160px;
+		width:125px;
+		height:31px;
+		background:#444;
+		text-align:center;
+		line-height:31px;
+		color:#FFFFFF;
+		font-size:11px;
+		font-weight:bold;
+	}
+
+	#stylized input:invalid, textarea:invalid{
+		border-color: red;
+	}
+
+	#stylized	input:valid, textarea:valid{
+		border:solid 1px #0dda69;
+	}
+
+	#stylized	input:focus, textarea:focus{
+		border:solid 1px #089abe !important;
+	}
+
+</style>
+</head>
+
+<body>
+
+
+<div id="stylized" class="myform">
+ <!--
+		<form id="form1" action="mail2.php" method="POST">
+
+			<label>Name
+				<span class="small">Add your name</span>
+			</label>
+			<input type="text" name="name">
+			
+			<label>Email
+				<span class="small">Enter a Valid Email</span>
+			</label>
+			<input type="text" name="email">
+			
+			<select name="priority" size="1">
+				<option value="Low">Low</option>
+				<option value="Normal">Normal</option>
+				<option value="High">High</option>
+				<option value="Emergency">Emergency</option>
+			</select>
+			
+			<label>Message
+				<span class="small">Type Your Message</span>
+			</label>
+			<textarea name="message" rows="6" cols="25"></textarea><br />
+
+			<button type="submit" value="Send" style="margin-top:15px;">Submit</button>
+			
+			<div class="spacer"></div>
+
+		</form>
+-->		
+
+
+ <!-- =====================================
+        ==== Start Contact -->
+        <section class="contact" data-scroll-index="6">
+            <div class="container-fluid">
+                <div class="row">
+                   
+                    <div class="col-lg-6 contact-form">
+                        <form class="form" id="contact-form" method="POST" action="./php/enviar-email.php">
+
+                            <div class="messages"></div>
+
+                            <div class="controls">
+
+                                <div class="row">
+
+                                    <div class="section-head col-sm-12">
+                                        <h4>
+                                            <span>Entre em</span><br>
+                                            Contato
+                                        </h4>
+                                    </div>
+									<br />
+                                    <div class="col-md-6">
+                                        <div class="form-group">					
+											<label>Name
+												<span class="small">Add your name</span>
+											</label>
+                                            <input id="form_name" type="text" name="name" placeholder="Nome" required="required" maxlength="50" minlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+											<label>Email
+												<span class="small">Enter a Valid Email</span>
+											</label>
+                                            <input id="form_email" type="email" name="email" placeholder="Email" required="required" maxlength="50">
+                                        </div>
+                                    </div>
+									<br />
+                                    <div class="col-md-12">                                    
+                                        <!-- Campo Assunto (select option) e css de classe "campo" -->
+                                        <div class="form-group">
+                                            <label>Assunto
+												<span class="small">Type Your Assunto</span>
+											</label>
+                                            <select id="assunto" name="assunto" required="required">
+												<option selected disabled value="">Selecione</option>
+												<option value="financeiro">financeiro</option>
+												<option value="cancelamento">cancelamento</option>
+                                                <option value="orcamento">orçamento</option>
+												<option value="trabalhe conosco ">trabalhe conosco </option>
+												<option value="sugestão/ reclamação / elogio">sugestão/ reclamação / elogio</option>                                       
+                                            </select>
+                                        </div>
+                                    </div>
+									</br>
+								<!--	====
+									<br />
+										<label>Type
+											<span class="small">Type of Contact</span>
+										</label>
+											<select name="type" size="1">
+												<option value="update">Website Update</option>
+												<option value="change">Information Change</option>
+												<option value="addition">Information Addition</option>
+												<option value="new">New Products</option>
+											</select>
+										<br />
+									====   -->
+									
+									</br>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+										<label>Message
+											<span class="small">Type Your Message</span>
+										</label>
+                                            <textarea id="form_message" name="message" placeholder="Mensagem" rows="4" required="required" maxlength="200"></textarea>
+                                        </div>
+                                    </div>
+									</br>
+									</br>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit"><span>Enviar</span></button>
+                                    </div>
+
+                                </div>                             
+                            </div>
+                        </form> 
+											
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact ====
+        ======================================= -->
+<div> 
